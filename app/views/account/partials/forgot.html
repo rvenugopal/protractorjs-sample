@@ -1,0 +1,76 @@
+<div id="forgot-box" class="forgot-box widget-box no-border visible">
+	<div class="widget-body">
+		<div class="widget-main">
+			<h4 class="header red lighter bigger">
+				<i class="icon-key"></i>
+				Retrieve Password
+			</h4>
+
+			<div class="space-6"></div>
+			<p>
+				Enter your email and to receive instructions
+			</p>
+
+			<form name="forgotPwd_form" novalidate data-ng-submit="submitForm()" 
+										data-ng-controller="ForgotPasswordCtrl">
+				
+				<fieldset>
+					<div class="error" name="forgotPwdFormErrors"
+					        data-ng-show="forgotPwd_form.$pristine && errorCode != ''">
+						    <small class="has-error" >
+						        {{errorMessage}}
+						    </small>
+					</div>
+					<label class="block clearfix">
+						<span class="block input-icon input-icon-right">
+						    <input type="email"
+						    	class="form-control"
+						        placeholder="Email" 
+						        name="email" 
+						        data-ng-model="forgotPwd.email" 
+						        data-ng-minlength=3
+						        data-ng-focus
+						        required>
+						    <i class="icon-envelope"></i>   
+
+						    
+					    </span> 
+					   	<div class="error" 
+					        data-ng-show="forgotPwd_form.email.$dirty && forgotPwd_form.email.$invalid && !forgotPwd_form.email.$focused">
+						    <small class="has-error" 
+						        data-ng-show="forgotPwd_form.email.$error.required">
+						        Your email is required.
+						    </small>
+						    <small class="has-error" 
+					             data-ng-show="forgotPwd_form.email.$error.minlength">
+					              Your email is required to be at least 3 characters
+					      </small>
+							<small class="has-error" 
+						        data-ng-show="forgotPwd_form.email.$error.email">
+						          Please input a valid email.
+						    </small>
+
+					  	</div>
+					</label>  
+				</fieldset>
+
+				<fieldset>
+					<div class="clearfix">
+						<button type="submit" class="width-35 pull-left btn btn-sm btn-danger" name="forgotPwdBtn"
+									data-ng-disabled="forgotPwd_form.$invalid">
+							<i class="icon-lightbulb"></i>
+							Send Me!
+						</button>
+					</div>
+				</fieldset>
+			</form>
+		</div><!-- /widget-main -->
+
+		<div class="toolbar center">
+			<a href="/auth.html#/login"  class="back-to-login-link">
+				Back to login
+				<i class="icon-arrow-right"></i>
+			</a>
+		</div>
+	</div><!-- /widget-body -->
+</div><!-- /forgot-box -->

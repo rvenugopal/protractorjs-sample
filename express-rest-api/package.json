@@ -1,0 +1,30 @@
+{
+  "name": "protractor-sample",
+  "version": "0.0.0",
+  "description": "Template for E2E testing with protractor",
+  "keywords": [
+    "angular",
+    "test",
+    "testing",
+    "webdriver",
+    "webdriverjs",
+    "selenium",
+    "protractor"
+  ],
+  "author": "Rao Venugopal <venuzr@gmail.com>",
+  "dependencies": {
+    "selenium-webdriver": "~2.37.0",
+    "minijasminenode": "~0.2.4",
+    "adm-zip": ">=0.4.2",
+    "optimist": "~0.6.0"
+  },
+  "devDependencies": {
+    "expect.js": "~0.2.0",
+    "jasmine-node": "~1.9.0",
+    "express": "~3.3.4",
+    "grunt-connect-proxy": "~0.1.5",
+  },
+  
+  "license" : "MIT",
+  
+}

@@ -1,0 +1,115 @@
+<div id="login-box" class="login-box visible widget-box no-border">
+	<div class="widget-body">
+		<div class="widget-main">
+			<h4 class="header blue lighter bigger">
+				<i class="icon-coffee green"></i>
+				Login
+			</h4>
+
+			<div class="space-6"></div>
+
+				<form name="login_form" novalidate data-ng-submit="loginForm()" 
+										data-ng-controller="LoginCtrl">
+				  	<fieldset>
+				  		<div class="error" 
+					        data-ng-show="login_form.$pristine && errorCode != ''">
+						    <small class="has-error" name="loginFormErrors">
+						        {{errorMessage}}
+						    </small>
+						</div>
+						<label class="block clearfix">
+							<span class="block input-icon input-icon-right">
+							    <input type="email"
+							    	class="form-control"
+							        placeholder="Email" 
+							        name="email" 
+							        ng-model="login.email" 
+							        data-ng-minlength=3
+							        data-ng-focus
+							        required>
+							    <i class="icon-envelope"></i>   
+
+							    
+						    </span> 
+						   	<div class="error" 
+						        data-ng-show="login_form.email.$dirty && login_form.email.$invalid && !login_form.email.$focused">
+							    <small class="has-error" 
+							        data-ng-show="login_form.email.$error.required">
+							        Your email is required.
+							    </small>
+							    <small class="has-error" 
+						             data-ng-show="login_form.email.$error.minlength">
+						              Your email is required to be at least 3 characters
+						      </small>
+								<small class="has-error" 
+							        data-ng-show="login_form.email.$error.email">
+							          Please input a valid email.
+							    </small>
+
+						  	</div>
+						</label>  
+						<label class="block clearfix">
+							<span class="block input-icon input-icon-right">
+							    <input type="password"
+							    	class="form-control"
+							        placeholder="Password" 
+							        name="password" 
+							        data-ng-model="login.password" 
+							        data-ng-minlength=8
+							        data-ng-maxlength=20
+							        data-ng-focus
+							        required />
+							    <i class="icon-lock"></i>
+						    </span> 
+						   	<div class="error" 
+						        data-ng-show="login_form.password.$dirty && login_form.password.$invalid && !login_form.password.$focused">
+							    <small class="has-error" 
+							        data-ng-show="login_form.password.$error.required">
+							        Your password is required.
+							    </small>
+							    <small class="has-error" 
+						             data-ng-show="login_form.password.$error.minlength">
+						            Password must be at least 8 characters
+						      	</small>
+								<small class="has-error" 
+						             data-ng-show="login_form.password.$error.maxlength">
+						              Password must be at maximum 20 characters
+						      	</small>
+								
+						  	</div>
+						</label>  
+					 </fieldset>
+
+				  	<div class="clearfix">
+						
+
+						<button type="submit" class="width-35 pull-left btn btn-sm btn-primary"
+								data-ng-disabled="login_form.$invalid" name="loginBtn">
+							<i class="icon-key"></i>
+							Login
+						</button>
+					</div>
+
+					<div class="space-4"></div>
+
+				</form>
+														
+		
+
+		<div class="toolbar clearfix">
+			<div>
+				<a href="/auth.html#/forgotpassword" class="forgot-password-link">
+					<i class="icon-arrow-left"></i>
+					I forgot my password
+				</a>
+			</div>
+
+			<div>
+				<a href="/auth.html#/register" class="user-signup-link">
+					I want to register
+					<i class="icon-arrow-right"></i>
+				</a>
+			</div>
+		</div>
+	</div><!-- /widget-body -->
+</div><!-- /login-box -->

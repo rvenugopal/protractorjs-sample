@@ -1,0 +1,131 @@
+<div id="signup-box" class="signup-box widget-box no-border visible">
+	<div class="widget-body">
+		<div class="widget-main">
+			<h4 class="header green lighter bigger">
+				<i class="icon-group blue"></i>
+				New User Registration
+			</h4>
+
+			<div class="space-6"></div>
+			<p> Enter your details to begin: </p>
+
+			<form name="register_form" novalidate data-ng-submit="submitForm()" 
+										data-ng-controller="UserRegisterCtrl">
+				<fieldset>
+					<div class="error" name="registerFormErrors"
+					        data-ng-show="register_form.$pristine && errorCode != ''">
+						    <small class="has-error" >
+						        {{errorMessage}}
+						    </small>
+					</div>
+					<label class="block clearfix">
+							<span class="block input-icon input-icon-right">
+							    <input type="email"
+							    	class="form-control"
+							        placeholder="Email" 
+							        name="email" 
+							        data-ng-model="register.email" 
+							        data-ng-minlength=3
+							        data-ng-focus
+							        required>
+							    <i class="icon-envelope"></i>   
+
+							    
+						    </span> 
+						   	<div class="error" 
+						        data-ng-show="register_form.email.$dirty && register_form.email.$invalid && !register_form.email.$focused">
+							    <small class="has-error" 
+							        data-ng-show="register_form.email.$error.required">
+							        Your email is required.
+							    </small>
+							    <small class="has-error" 
+						             data-ng-show="register_form.email.$error.minlength">
+						              Your email is required to be at least 3 characters
+						      </small>
+								<small class="has-error" 
+							        data-ng-show="register_form.email.$error.email">
+							          Please input a valid email.
+							    </small>
+
+						  	</div>
+					</label>	 
+					<label class="block clearfix">
+						<span class="block input-icon input-icon-right">
+						    <input type="password"
+						    	class="form-control"
+						        placeholder="Password" 
+						        name="password" 
+						        data-ng-model="register.password" 
+						        data-ng-minlength=8
+						        data-ng-maxlength=20
+						        data-ng-focus
+						        required />
+						    <i class="icon-lock"></i>
+					    </span> 
+					   	<div class="error" 
+					        data-ng-show="register_form.password.$dirty && register_form.password.$invalid && !register_form.password.$focused">
+						    <small class="has-error" 
+						        data-ng-show="register_form.password.$error.required">
+						        Your password is required.
+						    </small>
+						    <small class="has-error" 
+					             data-ng-show="register_form.password.$error.minlength">
+					            Password must be at least 8 characters
+					      	</small>
+							<small class="has-error" 
+					             data-ng-show="register_form.password.$error.maxlength">
+					              Password must be at maximum 20 characters
+					      	</small>
+							
+					  	</div>
+					</label>   	
+					
+
+					<label class="block clearfix">
+						<span class="block input-icon input-icon-right">
+							<input type="password"
+						    	class="form-control"
+						        placeholder="Password" 
+						        name="password_confirmation" 
+						        ng-model="register.password_confirmation" 
+						        match="register.password"
+						        ng-focus
+						        required />
+							<!-- <input type="password" 
+									class="form-control" placeholder="Repeat password" /> -->
+							<i class="icon-retweet"></i>
+						</span>
+						<div class="error" 
+					        ng-show="register_form.password_confirmation.$dirty && register_form.password_confirmation.$error.mismatch">
+						    <small class="has-error" >
+						        Passwords don't match!
+						    </small>
+					  	</div>
+					</label>
+
+					
+					<div class="space-24"></div>
+
+					<div class="clearfix">
+	
+						<button type="submit" class="width-65 pull-left btn btn-sm btn-success"
+								data-ng-disabled="register_form.$invalid" 
+								>
+							Register
+							<i class="icon-arrow-right icon-on-right"></i>
+						</button>
+					</div>
+				</fieldset>
+			</form>
+		</div>
+
+		<div class="toolbar center">
+			<a href="/auth.html#/login"  class="back-to-login-link">
+			<i class="icon-arrow-left"></i>
+				Back to login
+				
+			</a>
+		</div>
+
+	</div><!-- /widget-body -->
+</div><!-- /forgot-box -->
