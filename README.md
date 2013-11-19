@@ -20,4 +20,4 @@ Open third terminal window
 - Follow setup instructions for installing the selenium standalone server along with starting the server at https://github.com/angular/protractor?source=c#appendix-a-setting-up-a-standalone-selenium-server
 
 Open fourth terminal (for running the tests)
-run the command './node_modules/protractor/bin/protractor protractorConf.js'
+- run the command './node_modules/protractor/bin/protractor protractorConf.js'
