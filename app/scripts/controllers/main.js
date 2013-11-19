@@ -2,11 +2,7 @@
 
 angular.module('protractorSampleApp')
   .controller('MainCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+    
   })
    .controller('LogoutCtrl', ['$scope', '$http',
                    function($scope, $http) {

@@ -33,10 +33,6 @@ angular.module('myLoginApp', [
         $http.post($scope.logoutUrl, postData)
           .success(function(data){
              window.location.replace("/auth.html#login");
-          }).error(function(data, errorCode){
-            // $scope.errorCode = errorCode;
-            // $scope.errorMessage = data[0].Message;
-            // $scope.login_form.$setPristine();
           });
         
       } 
@@ -181,7 +177,7 @@ angular.module('myLoginApp', [
 })
 .factory('loginService', ['$cookies', function ($cookies) {
   return {
-  IsLoggedIn: function(cookieKey, reqLength, delimiter, minSubCookies, subStringArr, minSubStrLen) {
+  IsLoggedIn: function(cookieKey, reqLength) {
     var isLoggedIn = false;
     console.log($cookies)
 
@@ -189,25 +185,7 @@ angular.module('myLoginApp', [
     var cookieVal = $cookies[cookieKey];
     if (cookieVal.length < reqLength) return false;
     
-    // var isAllSubCookiesPresentCheck = _.every(subStringArr, function(val){
-    //   return cookieVal.indexOf(val) > 0;
-    // });
-
-    // if (!isAllSubCookiesPresentCheck) return false;
-
-    // var vArr = _.filter(cookieVal.split("\x00"), function(val) { // Server side delimiter for kvp
-    //   return (val != undefined) && (val.length > 3) && (val.indexOf(":") > 1); // ": is internal delimiter between key and value"
-    // });
-
-    // if (vArr == undefined || vArr.length == 0) return false;
-    // var isMinValLengthMet = _.every(vArr, function(val){
-    //   var arr = val.split(":");
-    //   if (arr.length <= 1) return false;
-    //   return arr[1].length > minSubStrLen;
-    // });
-
-    // return isMinValLengthMet;    
-
+    
     return true;      
    }
  }

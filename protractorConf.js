@@ -33,11 +33,7 @@ exports.config = {
   // Spec patterns are relative to the current working directly when
   // protractor is called.
   specs: [
-    //'test/e2e/angularHomepage.js',
-    //'test/e2e/firste2e.js',
-    //'test/e2e/cancellationPolicyTest.js',
     'test/e2e/login_registerTests.js',
-    // 'test/e2e/login_registerTests.js',
   ],
 
   // ----- Capabilities to be passed to the webdriver instance.
